@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasty_Planet Game</title>
+    <title>TastyPlanet Game</title>
     <style>
         /* Make the SWF fill the entire viewport */
         html, body {
@@ -26,14 +26,14 @@
         function autoSaveProgress() {
             const progressData = getGameProgress(); // Replace with actual game data retrieval
             if (progressData) {
-                localStorage.setItem('Tasty_Planet_progress', JSON.stringify(progressData));
+                localStorage.setItem('TastyPlanet_progress', JSON.stringify(progressData));
                 console.log("Auto-saved progress:", progressData);
             }
         }
 
         // Automatically load game progress on page load
         function autoLoadProgress() {
-            const savedProgress = localStorage.getItem('Tasty_Planet_progress');
+            const savedProgress = localStorage.getItem('TastyPlanet_progress');
             if (savedProgress) {
                 const progressData = JSON.parse(savedProgress);
                 console.log("Auto-loaded progress:", progressData);
@@ -68,7 +68,7 @@
 <body>
     <!-- Replace the <object> tag with the <embed> tag -->
     <div id="game-container">
-        <embed src="Tasty_Planet.swf" width="100%" height="100%" type="application/x-shockwave-flash">
+        <embed src="TastyPlanet.swf" width="100%" height="100%" type="application/x-shockwave-flash">
     </div>
 </body>
 </html>
