@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>supermario63 Game</title>
+    <title>Gun Mayhem Game</title>
     <style>
         /* Make the SWF fill the entire viewport */
         html, body {
@@ -27,14 +27,14 @@
         function autoSaveProgress() {
             const progressData = getGameProgress(); // Replace with actual game data retrieval
             if (progressData) {
-                localStorage.setItem('supermario63_progress', JSON.stringify(progressData));
+                localStorage.setItem('Gun Mayhem 2 More Mayhem_progress', JSON.stringify(progressData));
                 console.log("Auto-saved progress:", progressData);
             }
         }
 
         // Automatically load game progress on page load
         function autoLoadProgress() {
-            const savedProgress = localStorage.getItem('supermario63_progress');
+            const savedProgress = localStorage.getItem('Gun Mayhem 2 More Mayhem_progress');
             if (savedProgress) {
                 const progressData = JSON.parse(savedProgress);
                 console.log("Auto-loaded progress:", progressData);
@@ -69,7 +69,7 @@
 <body>
     <!-- Replace the <object> tag with the <embed> tag -->
     <div id="game-container">
-        <embed src="supermario63.swf" width="100%" height="100%" type="application/x-shockwave-flash">
+        <embed src="Gun Mayhem 2 More Mayhem.swf" width="100%" height="100%" type="application/x-shockwave-flash">
     </div>
 </body>
 </html>
