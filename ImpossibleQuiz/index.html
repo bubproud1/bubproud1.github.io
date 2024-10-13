@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impossible Quiz Game</title>
+    <style>
+        /* Make the SWF fill the entire viewport */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+    </style>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script>
+        // Automatically save game progress (replace with real game data)
+        function autoSaveProgress() {
+            const progressData = getGameProgress(); // Replace with actual game data retrieval
+            if (progressData) {
+                localStorage.setItem('ImpossibleQuiz_progress', JSON.stringify(progressData));
+                console.log("Auto-saved progress:", progressData);
+            }
+        }
+
+        // Automatically load game progress on page load
+        function autoLoadProgress() {
+            const savedProgress = localStorage.getItem('ImpossibleQuiz_progress');
+            if (savedProgress) {
+                const progressData = JSON.parse(savedProgress);
+                console.log("Auto-loaded progress:", progressData);
+                applyGameProgress(progressData); // Apply progress to the game
+            } else {
+                console.log("No saved progress found.");
+            }
+        }
+
+        window.onload = function() {
+            // Automatically load game progress when the page loads
+            autoLoadProgress();
+
+            // Auto-save progress every 30 seconds
+            setInterval(autoSaveProgress, 30000);
+
+            // Auto-save when the user leaves the page
+            window.onbeforeunload = autoSaveProgress;
+        }
+
+        // Placeholder functions for getting and applying game progress
+        function getGameProgress() {
+            return null; // Implement logic to get progress from the game
+        }
+
+        function applyGameProgress(progressData) {
+            console.log("Applying game progress:", progressData);
+            // Implement logic to apply progress to the game
+        }
+    </script>
+</head>
+<body>
+    <!-- Replace the <object> tag with the <embed> tag -->
+    <div id="game-container">
+        <embed src="ImpossibleQuiz.swf" width="100%" height="100%" type="application/x-shockwave-flash">
+    </div>
+</body>
+</html>
